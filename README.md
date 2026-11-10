@@ -16,9 +16,9 @@ Standard analog FM receivers lack precise digital frequency control, visual feed
 This project implements a fully digital FM radio receiver using the **Raspberry Pi Pico (RP2040)** running MicroPython. The system features:
 
 * **Digital Tuning & RDS:** Real-time frequency control via an I2C-controlled **Si4703 FM tuner module**, capable of reading Signal Strength (RSSI) and RDS station text.
-* **User Interface:** A low-power **Nokia 5110 LCD screen** (PCD8544 controller via SPI) displaying tuning frequency, RSSI bar, and station presets.
+* **User Interface:** A low-power **Nokia 5110 LCD screen** (PCD8544 controller via SPI) displaying tuning frequency, RSSI bar
 * **Input Control:** A **KY-040 Rotary Encoder** utilizing hardware interrupts for smooth frequency stepping and button-activated preset switching.
-* **Isolated Audio:** Audio output is tapped directly from the Si4703 3.5mm jack into headphones or an external powered amplifier (preventing GPIO audio loading).
+* **Isolated Audio:** Audio output is tapped directly from the Si4703 3.5mm jack into headphones or an external powered amplifier.
 
 ---
 
@@ -26,7 +26,7 @@ This project implements a fully digital FM radio receiver using the **Raspberry 
 
 * **Robert Tarnita Gabriel**
   * **Role:** Lead Software Engineer & Source Control
-  * **Responsibilities:** MicroPython driver integration (`Si4703`, `Nokia5110`, `RotaryEncoder`), interrupt-driven concurrency management, software architecture, repository structure, and Sphinx setup.
+  * **Responsibilities:** MicroPython driver integration (`Si4703`, `Nokia5110`, `RotaryEncoder`), interrupt-driven concurrency setup, software architecture, repository structure and management
 * **Daniel Marchis Lucian**
   * **Role:** Hardware & Physical Assembly Engineer
   * **Responsibilities:** Component research, schematic design, wiring layout, power and physical breadboard assembly.
@@ -44,10 +44,7 @@ Below is the repository structure required for code execution, documentation gen
 micropico-fm-receiver/
 ├── docs/
 │   ├── conf.py
-│   ├── index.rst
 │   ├── requirements.txt
-│   ├── drivers.rst
-│   └── make.bat
 ├── images/
 │   ├── block_diagram.png
 │   ├── wiring_schematic.png
@@ -78,10 +75,10 @@ micropico-fm-receiver/
 | Quantity | Component Description                 | Interface / Specs               | Notes                                    |
 | :------- | :------------------------------------ | :------------------------------ | :--------------------------------------- |
 | 1x       | Raspberry Pi Pico                     | RP2040 Dual-Core ARM Cortex-M0+ | 3.3V Logic Level                         |
-| 1x       | HW-322 (Si4703) FM Tuner Module       | I2C + 3.5mm Jack                | Includes headphone amp / antenna         |
+| 1x       | Si4703 FM Tuner Module               | I2C + 3.5mm Jack                | Includes headphone amp / antenna         |
 | 1x       | Nokia 5110 Display (PCD8544)          | SPI (84x48 Graphic LCD)         | Backlit graphical LCD                    |
 | 1x       | HW-322 / KY-040 Rotary Encoder Module | Quadrature + Push Button        | Includes pull-up resistors               |
-| 1x       | 3.5mm Headphones / Powered Amplifier  | Analog Audio                    | **Audio source** (Cable acts as antenna) |
+| 1x       | 3.5mm Headphones                      | Analog Audio                    | **Audio source** (Cable acts as antenna) |
 | 1x       | Breadboard & Jumper Wires             | N/A                             | Circuit interconnections                 |
 
 ### Key Assumptions & Limitations
@@ -118,16 +115,7 @@ micropico-fm-receiver/
 |                    | DT            | GP15            | Pin 20            | Rotary Channel B                 |
 |                    | SW            | GP16            | Pin 21            | Push Button (Interrupt IRQ)      |
 
----
-
-
-```tex
-
-```
-
----
-
-## 7. Software Architecture & Classes
+## 6. Software Architecture & Classes
 
 The codebase is organized into modular classes to enforce encapsulation and code reusability:
 
@@ -149,7 +137,7 @@ Each integrated component (Si4703, PCD8544, KY-040) retains complex internal sta
 
 ---
 
-## 8. Timing & Concurrency Plan
+## 7. Timing & Concurrency Plan
 
 To maintain smooth audio processing, responsive UI updates, and zero missed encoder steps, task timing is partitioned into periodic interrupt and loop activities:
 
@@ -164,7 +152,7 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ---
 
-## 9. Setup & Operating Instructions
+## 8. Setup & Operating Instructions
 
 ### Prerequisites & Dependencies
 
@@ -198,41 +186,20 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ---
 
-## 10. Evidence of Testing
+## 9. Evidence of Testing
 
 ### Prototype Screenshots & Photos
 
 ![Breadboard Prototype Verification](images/prototype_photo.jpg)
-*Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display and Si4703 audio output.*
+*Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display and Si4703 audio output.
+
+## 10. Deliverables & Presentation Links
+
+* **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder) (
+* **Project Poster:** [View Project Poster](docs/poster.pdf).
 
 ---
 
-## 11. Sphinx Documentation Guide
-
-Sphinx source files are located under the `docs/` folder for auto-generating API documentation for drivers and public interfaces.
-
-### Local Documentation Build Steps
-
-1. Navigate to the `docs` directory and install dependencies:
-   ```bash
-   cd docs
-   pip install -r requirements.txt
-   ```
-2. Build HTML documentation:
-   ```bash
-   make html
-   ```
-3. View the generated documentation by opening `docs/build/html/index.html` in any web browser.
-
----
-
-## 12. Deliverables & Presentation Links
-
-* **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder) (1-2 min operational walkthrough).
-* **Project Poster:** [View Project Poster (PDF / PNG)](docs/poster.pdf).
-
----
-
-## 13. License 
+## 11. License
 
 * **License:** Open-source under the [MIT License](LICENSE).
