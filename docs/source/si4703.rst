@@ -1,0 +1,7 @@
+si4703 module
+=============
+
+.. automodule:: si4703
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micropico FM Receiver with Digital Tuning &mdash; Micropico FM Receiver with Digital Tuning  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="src" href="modules.html" />
+    <link rel="prev" title="Micropico FM Receiver with Digital Tuning documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Micropico FM Receiver with Digital Tuning
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Project Overview</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Micropico FM Receiver with Digital Tuning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#problem-statement-solution-summary">1. Problem Statement &amp; Solution Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">Problem Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#team-members-contributions">2. Team Members &amp; Contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-structure">3. Project Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-inventory-assumptions">4. Hardware Inventory &amp; Assumptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-assumptions-limitations">Key Assumptions &amp; Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#wiring-diagram-pinout-connection">5. Wiring Diagram &amp; Pinout Connection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-pin-mapping-table">Hardware Pin Mapping Table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-architecture-classes">6. Software Architecture &amp; Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#component-class-justification">Component Class Justification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#timing-concurrency-plan">7. Timing &amp; Concurrency Plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-operating-instructions">8. Setup &amp; Operating Instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites-dependencies">Prerequisites &amp; Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operating-instructions">Operating Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#evidence-of-testing">9. Evidence of Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prototype-screenshots">Prototype Screenshots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deliverables-presentation-links">10. Deliverables &amp; Presentation Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">11. License</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">src</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html">config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nokia5110.html">nokia5110 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotary_encoder.html">rotary_encoder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="si4703.html">si4703 module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Micropico FM Receiver with Digital Tuning</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Micropico FM Receiver with Digital Tuning</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/readme.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="micropico-fm-receiver-with-digital-tuning">
+<h1>Micropico FM Receiver with Digital Tuning<a class="headerlink" href="#micropico-fm-receiver-with-digital-tuning" title="Link to this heading"></a></h1>
+<p><strong>Digital Electronics 2 Final Project</strong>
+<em>Raspberry Pi Pico MicroPython Implementation</em></p>
+<hr class="docutils" />
+<section id="problem-statement-solution-summary">
+<h2>1. Problem Statement &amp; Solution Summary<a class="headerlink" href="#problem-statement-solution-summary" title="Link to this heading"></a></h2>
+<section id="problem-statement">
+<h3>Problem Statement<a class="headerlink" href="#problem-statement" title="Link to this heading"></a></h3>
+<p>Standard analog FM receivers lack precise digital frequency control, visual feedback, signal quality metrics, and preset station management. Furthermore, building compact embedded digital receivers requires tight timing coordination between real-time input devices (rotary encoders), I2C tuner ICs, and SPI visual displays without audio output degradation or UI lag.</p>
+</section>
+<section id="solution">
+<h3>Solution<a class="headerlink" href="#solution" title="Link to this heading"></a></h3>
+<p>This project implements a fully digital FM radio receiver using the <strong>Raspberry Pi Pico (RP2040)</strong> running MicroPython. The system features:</p>
+<ul class="simple">
+<li><p><strong>Digital Tuning &amp; RDS:</strong> Real-time frequency control via an I2C-controlled <strong>Si4703 FM tuner module</strong>, capable of reading Signal Strength (RSSI) and RDS station text.</p></li>
+<li><p><strong>User Interface:</strong> A low-power <strong>Nokia 5110 LCD screen</strong> (PCD8544 controller via SPI) displaying tuning frequency, RSSI bar</p></li>
+<li><p><strong>Input Control:</strong> A <strong>KY-040 Rotary Encoder</strong> utilizing hardware interrupts for smooth frequency stepping and button-activated preset switching.</p></li>
+<li><p><strong>Isolated Audio:</strong> Audio output is tapped directly from the Si4703 3.5mm jack into headphones or an external powered amplifier.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="team-members-contributions">
+<h2>2. Team Members &amp; Contributions<a class="headerlink" href="#team-members-contributions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Robert Tarnita Gabriel</strong></p>
+<ul>
+<li><p><strong>Role:</strong> Lead Software Engineer &amp; Source Control</p></li>
+<li><p><strong>Responsibilities:</strong> MicroPython driver integration (<code class="docutils literal notranslate"><span class="pre">Si4703</span></code>, <code class="docutils literal notranslate"><span class="pre">Nokia5110</span></code>, <code class="docutils literal notranslate"><span class="pre">RotaryEncoder</span></code>), interrupt-driven concurrency setup, software architecture, repository structure and management</p></li>
+</ul>
+</li>
+<li><p><strong>Daniel Marchis Lucian</strong></p>
+<ul>
+<li><p><strong>Role:</strong> Hardware &amp; Physical Assembly Engineer</p></li>
+<li><p><strong>Responsibilities:</strong> Component research, schematic design, wiring layout, power and physical breadboard assembly.</p></li>
+</ul>
+</li>
+<li><p><strong>Danut Comsa Valentin</strong></p>
+<ul>
+<li><p><strong>Role:</strong> Test Engineer &amp; Documentation Lead</p></li>
+<li><p><strong>Responsibilities:</strong> System parameter measurements (update rates, RSSI range, response latency), project poster design, verification testing, and video production.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="project-structure">
+<h2>3. Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h2>
+<p>Below is the repository structure required for code execution, documentation generation, and submission assets:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>micropico-fm-receiver/
+├── docs/
+│   ├── conf.py
+│   ├── requirements.txt
+├── images/
+│   ├── block_diagram.png
+│   ├── wiring_schematic.png
+│   ├── poster.png
+│   └── prototype_photo.jpeg
+├── src/
+│   ├── main.py
+│   ├── nokia5110.py
+│   ├── rotary_encoder.py
+│   ├── si4703.py
+│   └── config.py
+├── tests/
+│   ├── test_display.py
+│   ├── test_encoder.py
+│   └── test_tuner.py
+├── README.md
+├── LICENSE
+└── .gitignore
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="hardware-inventory-assumptions">
+<h2>4. Hardware Inventory &amp; Assumptions<a class="headerlink" href="#hardware-inventory-assumptions" title="Link to this heading"></a></h2>
+<section id="bill-of-materials">
+<h3>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Quantity</p></th>
+<th class="head text-left"><p>Component Description</p></th>
+<th class="head text-left"><p>Interface / Specs</p></th>
+<th class="head text-left"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1x</p></td>
+<td class="text-left"><p>Raspberry Pi Pico</p></td>
+<td class="text-left"><p>RP2040 Dual-Core ARM Cortex-M0+</p></td>
+<td class="text-left"><p>3.3V Logic Level</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1x</p></td>
+<td class="text-left"><p>Si4703 FM Tuner Module</p></td>
+<td class="text-left"><p>I2C + 3.5mm Jack</p></td>
+<td class="text-left"><p>Includes headphone amp / antenna</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>1x</p></td>
+<td class="text-left"><p>Nokia 5110 Display (PCD8544)</p></td>
+<td class="text-left"><p>SPI (84x48 Graphic LCD)</p></td>
+<td class="text-left"><p>Backlit graphical LCD</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1x</p></td>
+<td class="text-left"><p>HW-322 / KY-040 Rotary Encoder Module</p></td>
+<td class="text-left"><p>Quadrature + Push Button</p></td>
+<td class="text-left"><p>Includes pull-up resistors</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>1x</p></td>
+<td class="text-left"><p>3.5mm Headphones</p></td>
+<td class="text-left"><p>Analog Audio</p></td>
+<td class="text-left"><p><strong>Audio source</strong> (Cable acts as antenna)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1x</p></td>
+<td class="text-left"><p>Breadboard &amp; Jumper Wires</p></td>
+<td class="text-left"><p>N/A</p></td>
+<td class="text-left"><p>Circuit interconnections</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="key-assumptions-limitations">
+<h3>Key Assumptions &amp; Limitations<a class="headerlink" href="#key-assumptions-limitations" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Audio Path:</strong> The Pico <strong>never</strong> drives speaker loads directly via GPIO. Audio signals originate exclusively from the Si4703 3.5mm output jack.</p></li>
+<li><p><strong>Antenna Requirement:</strong> The Si4703 uses connected headphones or a 3.5mm auxiliary cable as speaker.</p></li>
+<li><p><strong>Operating Voltage:</strong> All modules run on the Pico’s 3.3V rail (<code class="docutils literal notranslate"><span class="pre">3V3_OUT</span></code>).</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="wiring-diagram-pinout-connection">
+<h2>5. Wiring Diagram &amp; Pinout Connection<a class="headerlink" href="#wiring-diagram-pinout-connection" title="Link to this heading"></a></h2>
+<section id="hardware-pin-mapping-table">
+<h3>Hardware Pin Mapping Table<a class="headerlink" href="#hardware-pin-mapping-table" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Component</p></th>
+<th class="head text-left"><p>Component Pin</p></th>
+<th class="head text-left"><p>Pico Pin Name</p></th>
+<th class="head text-left"><p>Pico Physical Pin</p></th>
+<th class="head text-left"><p>Function / Supply Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Si4703 Tuner</strong></p></td>
+<td class="text-left"><p>VCC</p></td>
+<td class="text-left"><p>3V3_OUT</p></td>
+<td class="text-left"><p>Pin 36</p></td>
+<td class="text-left"><p>Power (3.3V, max 50mA)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>GND</p></td>
+<td class="text-left"><p>GND</p></td>
+<td class="text-left"><p>Pin 38</p></td>
+<td class="text-left"><p>Common Ground</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>SDIO (SDA)</p></td>
+<td class="text-left"><p>GP4 (I2C0 SDA)</p></td>
+<td class="text-left"><p>Pin 6</p></td>
+<td class="text-left"><p>I2C Data (pull-up configured)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>SCLK (SCL)</p></td>
+<td class="text-left"><p>GP5 (I2C0 SCL)</p></td>
+<td class="text-left"><p>Pin 7</p></td>
+<td class="text-left"><p>I2C Clock</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>RST</p></td>
+<td class="text-left"><p>GP6</p></td>
+<td class="text-left"><p>Pin 9</p></td>
+<td class="text-left"><p>Tuner Reset Pin</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Nokia 5110 LCD</strong></p></td>
+<td class="text-left"><p>VCC</p></td>
+<td class="text-left"><p>3V3_OUT</p></td>
+<td class="text-left"><p>Pin 36</p></td>
+<td class="text-left"><p>Power (3.3V)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>GND</p></td>
+<td class="text-left"><p>GND</p></td>
+<td class="text-left"><p>Pin 38</p></td>
+<td class="text-left"><p>Common Ground</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>CLK</p></td>
+<td class="text-left"><p>GP18 (SPI0 SCK)</p></td>
+<td class="text-left"><p>Pin 24</p></td>
+<td class="text-left"><p>SPI Serial Clock</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>DIN (MOSI)</p></td>
+<td class="text-left"><p>GP19 (SPI0 TX)</p></td>
+<td class="text-left"><p>Pin 25</p></td>
+<td class="text-left"><p>SPI Data Input</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>DC</p></td>
+<td class="text-left"><p>GP20</p></td>
+<td class="text-left"><p>Pin 26</p></td>
+<td class="text-left"><p>Data / Command Control</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>CE (CS)</p></td>
+<td class="text-left"><p>GP17 (SPI0 CSN)</p></td>
+<td class="text-left"><p>Pin 22</p></td>
+<td class="text-left"><p>Chip Enable</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>RST</p></td>
+<td class="text-left"><p>GP21</p></td>
+<td class="text-left"><p>Pin 27</p></td>
+<td class="text-left"><p>Display Reset</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>LIGHT</p></td>
+<td class="text-left"><p>3V3_OUT / GP22</p></td>
+<td class="text-left"><p>Pin 36 / 28</p></td>
+<td class="text-left"><p>Backlight supply</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>KY-040 Encoder</strong></p></td>
+<td class="text-left"><p>+</p></td>
+<td class="text-left"><p>3V3_OUT</p></td>
+<td class="text-left"><p>Pin 36</p></td>
+<td class="text-left"><p>Power (3.3V)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>GND</p></td>
+<td class="text-left"><p>GND</p></td>
+<td class="text-left"><p>Pin 38</p></td>
+<td class="text-left"><p>Common Ground</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>CLK</p></td>
+<td class="text-left"><p>GP14</p></td>
+<td class="text-left"><p>Pin 19</p></td>
+<td class="text-left"><p>Rotary Channel A (Interrupt IRQ)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>DT</p></td>
+<td class="text-left"><p>GP15</p></td>
+<td class="text-left"><p>Pin 20</p></td>
+<td class="text-left"><p>Rotary Channel B</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>SW</p></td>
+<td class="text-left"><p>GP16</p></td>
+<td class="text-left"><p>Pin 21</p></td>
+<td class="text-left"><p>Push Button (Interrupt IRQ)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="software-architecture-classes">
+<h2>6. Software Architecture &amp; Classes<a class="headerlink" href="#software-architecture-classes" title="Link to this heading"></a></h2>
+<p>The codebase is organized into modular classes to enforce encapsulation and code reusability:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Si4703</span></code> (<code class="docutils literal notranslate"><span class="pre">src/si4703.py</span></code>):</strong></p>
+<ul class="simple">
+<li><p>Encapsulates I2C communications with the Silicon Labs Si4703 chip.</p></li>
+<li><p>Handles initialization sequence, hardware reset, channel frequency calculation ($MHz \leftrightarrow \text{Channel ID}$), volume adjustment, RSSI register polling, and RDS block decoding.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Nokia5110</span></code> (<code class="docutils literal notranslate"><span class="pre">src/nokia5110.py</span></code>):</strong></p>
+<ul class="simple">
+<li><p>Encapsulates SPI communication with the PCD8544 display controller.</p></li>
+<li><p>Manages an 84x48 frame buffer, custom typography rendering, RSSI signal bar drawing routines, and partial screen updates.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RotaryEncoder</span></code> (<code class="docutils literal notranslate"><span class="pre">src/rotary_encoder.py</span></code>):</strong></p>
+<ul class="simple">
+<li><p>Provides non-blocking quadrature decoding via MicroPython <code class="docutils literal notranslate"><span class="pre">Pin.IRQ_RISING</span></code> / <code class="docutils literal notranslate"><span class="pre">Pin.IRQ_FALLING</span></code> interrupts.</p></li>
+<li><p>Implements software debouncing for reliable step detection and switch press handling.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">main.py</span></code> (<code class="docutils literal notranslate"><span class="pre">src/main.py</span></code>):</strong></p>
+<ul class="simple">
+<li><p>Instantiates hardware classes, manages state (current frequency, volume, station presets), and runs the asynchronous event execution loop.</p></li>
+</ul>
+</li>
+</ol>
+<section id="component-class-justification">
+<h3>Component Class Justification<a class="headerlink" href="#component-class-justification" title="Link to this heading"></a></h3>
+<p>Each integrated component (Si4703, PCD8544, KY-040) retains complex internal state (e.g., register configurations, display buffers, interrupt pin states). Implementing them as reusable classes allows isolated unit testing and simple porting across RP2040 platforms.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="timing-concurrency-plan">
+<h2>7. Timing &amp; Concurrency Plan<a class="headerlink" href="#timing-concurrency-plan" title="Link to this heading"></a></h2>
+<p>To maintain smooth audio processing, responsive UI updates, and zero missed encoder steps, task timing is partitioned into periodic interrupt and loop activities:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activity</p></th>
+<th class="head text-left"><p>Execution Mechanism</p></th>
+<th class="head text-left"><p>Interval / Rate</p></th>
+<th class="head text-left"><p>Priority</p></th>
+<th class="head text-left"><p>Goal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Encoder Decoding</strong></p></td>
+<td class="text-left"><p>Hardware Pin IRQ</p></td>
+<td class="text-left"><p>Immediate (Edge triggered)</p></td>
+<td class="text-left"><p>High</p></td>
+<td class="text-left"><p>Zero missed step increments during fast rotation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Button Debounce</strong></p></td>
+<td class="text-left"><p>Timer / IRQ Timestamp</p></td>
+<td class="text-left"><p>50 ms debounce window</p></td>
+<td class="text-left"><p>High</p></td>
+<td class="text-left"><p>Prevent double-triggering on preset toggle</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Display Refresh</strong></p></td>
+<td class="text-left"><p>Periodic Loop Routine</p></td>
+<td class="text-left"><p>~50 ms (20 Hz)</p></td>
+<td class="text-left"><p>Medium</p></td>
+<td class="text-left"><p>Flicker-free visual feedback of frequency changes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>RSSI &amp; RDS Read</strong></p></td>
+<td class="text-left"><p>Periodic Polling</p></td>
+<td class="text-left"><p>~300 ms</p></td>
+<td class="text-left"><p>Low</p></td>
+<td class="text-left"><p>Read signal strength and station text over I2C</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Preset Flash Save</strong></p></td>
+<td class="text-left"><p>Asynchronous Event</p></td>
+<td class="text-left"><p>On long-press switch event</p></td>
+<td class="text-left"><p>Low</p></td>
+<td class="text-left"><p>Store user presets to flash without blocking audio</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="setup-operating-instructions">
+<h2>8. Setup &amp; Operating Instructions<a class="headerlink" href="#setup-operating-instructions" title="Link to this heading"></a></h2>
+<section id="prerequisites-dependencies">
+<h3>Prerequisites &amp; Dependencies<a class="headerlink" href="#prerequisites-dependencies" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>MicroPython Firmware:</strong> v1.20 or later flashed to Raspberry Pi Pico.</p></li>
+<li><p><strong>Development Environment:</strong> Thonny IDE, VS Code with MicroPico extension, or <code class="docutils literal notranslate"><span class="pre">rshell</span></code>.</p></li>
+</ul>
+</section>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Flash the latest MicroPython <code class="docutils literal notranslate"><span class="pre">.uf2</span></code> image onto the Raspberry Pi Pico.</p></li>
+<li><p>Clone this repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Robikhx/MicroPython_FMReceiver_2026
+<span class="nb">cd</span><span class="w"> </span>micropico-fm-receiver
+</pre></div>
+</div>
+</li>
+<li><p>Upload all source files from <code class="docutils literal notranslate"><span class="pre">src/</span></code> to the Pico’s root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ampy<span class="w"> </span>--port<span class="w"> </span>COM3<span class="w"> </span>put<span class="w"> </span>src/nokia5110.py
+ampy<span class="w"> </span>--port<span class="w"> </span>COM3<span class="w"> </span>put<span class="w"> </span>src/si4703.py
+ampy<span class="w"> </span>--port<span class="w"> </span>COM3<span class="w"> </span>put<span class="w"> </span>src/rotary_encoder.py
+ampy<span class="w"> </span>--port<span class="w"> </span>COM3<span class="w"> </span>put<span class="w"> </span>src/config.py
+ampy<span class="w"> </span>--port<span class="w"> </span>COM3<span class="w"> </span>put<span class="w"> </span>src/main.py
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="operating-instructions">
+<h3>Operating Instructions<a class="headerlink" href="#operating-instructions" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Power On:</strong> Connect 3.5mm headphones or an aux cable connected to an amplifier into the Si4703 3.5mm jack. Power the Pico via USB.</p></li>
+<li><p><strong>Frequency Tuning:</strong> Rotate the encoder knob clockwise to tune up (+0.1 MHz) or counter-clockwise to tune down (-0.1 MHz).</p></li>
+<li><p><strong>Preset Switching:</strong> Short-press the rotary encoder shaft button to cycle through saved station presets.</p></li>
+<li><p><strong>Save Preset:</strong> Press and hold the rotary encoder shaft button for &gt; 2 seconds on any active frequency to save it to the current preset slot.</p></li>
+<li><p><strong>Display Metrics:</strong> Observe real-time frequency ($MHz$), signal strength ($dBuV$), and RDS station text on the LCD.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="evidence-of-testing">
+<h2>9. Evidence of Testing<a class="headerlink" href="#evidence-of-testing" title="Link to this heading"></a></h2>
+<section id="prototype-screenshots">
+<h3>Prototype Screenshots<a class="headerlink" href="#prototype-screenshots" title="Link to this heading"></a></h3>
+<p><img alt="Breadboard Prototype" src="design/prototype_photo.jpeg" />
+Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder .</p>
+</section>
+</section>
+<section id="deliverables-presentation-links">
+<h2>10. Deliverables &amp; Presentation Links<a class="headerlink" href="#deliverables-presentation-links" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Demonstration Video:</strong> <a class="reference external" href="https://youtube.com/watch?v=placeholder">Watch Project Demo Video on YouTube</a></p></li>
+<li><p><strong>Project Poster:</strong> <a class="reference internal" href="#docs/poster.pdf"><span class="xref myst">View Project Poster</span></a>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="license">
+<h2>11. License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>License:</strong> Open-source under the <a class="reference internal" href="#LICENSE"><span class="xref myst">MIT License</span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Micropico FM Receiver with Digital Tuning documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="src" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Robert Tarnita, Daniel Marchis, Comsa Danut.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
