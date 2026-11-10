@@ -49,7 +49,7 @@ micropico-fm-receiver/
 │   ├── block_diagram.png
 │   ├── wiring_schematic.png
 │   ├── poster.png
-│   └── prototype_photo.jpg
+│   └── prototype_photo.jpeg
 ├── src/
 │   ├── main.py
 │   ├── nokia5110.py
@@ -188,14 +188,14 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ## 9. Evidence of Testing
 
-### Prototype Screenshots & Photos
+### Prototype Screenshots 
 
-![Breadboard Prototype Verification](images/prototype_photo.jpg)
-*Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display and Si4703 audio output.
+![Breadboard Prototype](design/prototype_photo.jpeg)
+Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder .
 
 ## 10. Deliverables & Presentation Links
 
-* **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder) (
+* **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder)
 * **Project Poster:** [View Project Poster](docs/poster.pdf).
 
 ---
