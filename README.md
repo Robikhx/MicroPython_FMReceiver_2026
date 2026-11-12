@@ -183,7 +183,7 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 1. Flash the latest MicroPython `.uf2` image onto the Raspberry Pi Pico.
 2. Clone this repository:
    ```bash
-   git clone [https://github.com/Robikhx/MicroPython_FMReceiver_2026](https://github.com/Robikhx/MicroPython_FMReceiver_2026)
+   git clone https://github.com/Robikhx/MicroPython_FMReceiver_2026
    cd micropico-fm-receiver
    ```
 3. Upload all source files from `src/` to the Pico's root directory:
