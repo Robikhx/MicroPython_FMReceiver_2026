@@ -3,7 +3,14 @@
 **Digital Electronics 2 Final Project**
 *Raspberry Pi Pico MicroPython Implementation*
 
-[![Documentation](https://img.shields.io/badge/docs-Sphynx%20Documentation-blue)](https://robikhx.github.io/MicroPython_FMReceiver_2026/)
+<p align="center">
+  <a href="https://robikhx.github.io/MicroPython_FMReceiver_2026/">
+    <img src="https://img.shields.io/badge/docs-Sphinx%20Documentation-red" alt="Documentation">
+  </a>
+  <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Robikhx/MicroPython_FMReceiver_2026" alt="MIT License">
+  </a>
+</p>
 
 ## 1. Problem Statement & Solution Summary
 
@@ -15,24 +22,29 @@ Standard analog FM receivers lack precise digital frequency control, visual feed
 
 This project implements a fully digital FM radio receiver using the **Raspberry Pi Pico (RP2040)** running MicroPython. The system features:
 
-* **Digital Tuning & RDS:** Real-time frequency control via an I2C-controlled **Si4703 FM tuner module**, capable of reading Signal Strength (RSSI) and RDS station text.
-* **User Interface:** A low-power **Nokia 5110 LCD screen** (PCD8544 controller via SPI) displaying tuning frequency, RSSI bar
-* **Input Control:** A **KY-040 Rotary Encoder** utilizing hardware interrupts for smooth frequency stepping and button-activated preset switching.
-* **Isolated Audio:** Audio output is tapped directly from the Si4703 3.5mm jack into headphones or an external powered amplifier.
+- **Digital Tuning & RDS:** Real-time frequency control via an I2C-controlled **Si4703 FM tuner module**, capable of reading Signal Strength (RSSI) and RDS station text.
+- **User Interface:** A low-power **Nokia 5110 LCD screen** (PCD8544 controller via SPI) displaying tuning frequency, RSSI bar
+- **Input Control:** A **KY-040 Rotary Encoder** utilizing hardware interrupts for smooth frequency stepping and button-activated preset switching.
+- **Isolated Audio:** Audio output is tapped directly from the Si4703 3.5mm jack into headphones or an external powered amplifier.
+
+<p align="center">
+  <img src="images/block_diagram.png" width="650" alt="System Block Diagram"><br>
+  <em>Figure 1: High-level hardware and communication bus block diagram of the Micropico FM Receiver.</em>
+</p>
 
 ---
 
 ## 2. Team Members & Contributions
 
-* **Robert Tarnita Gabriel**
-  * **Role:** Lead Software Engineer & Source Control
-  * **Responsibilities:** MicroPython driver integration (`Si4703`, `Nokia5110`, `RotaryEncoder`), interrupt-driven concurrency setup, software architecture, repository structure and management
-* **Daniel Marchis Lucian**
-  * **Role:** Hardware & Physical Assembly Engineer
-  * **Responsibilities:** Component research, schematic design, wiring layout, power and physical breadboard assembly.
-* **Danut Comsa Valentin**
-  * **Role:** Test Engineer & Documentation Lead
-  * **Responsibilities:** System parameter measurements (update rates, RSSI range, response latency), project poster design, verification testing, and video production.
+- **Robert Tarnita Gabriel**
+  - **Role:** Lead Software Engineer & Source Control
+  - **Responsibilities:** MicroPython driver integration (`Si4703`, `Nokia5110`, `RotaryEncoder`), interrupt-driven concurrency setup, software architecture, repository structure and management
+- **Daniel Marchis Lucian**
+  - **Role:** Hardware & Physical Assembly Engineer
+  - **Responsibilities:** Component research, schematic design, wiring layout, power and physical breadboard assembly.
+- **Danut Comsa Valentin**
+  - **Role:** Test Engineer & Documentation Lead
+  - **Responsibilities:** System parameter measurements (update rates, RSSI range, response latency), project poster design, verification testing, and video production.
 
 ---
 
@@ -75,7 +87,7 @@ micropico-fm-receiver/
 | Quantity | Component Description                 | Interface / Specs               | Notes                                    |
 | :------- | :------------------------------------ | :------------------------------ | :--------------------------------------- |
 | 1x       | Raspberry Pi Pico                     | RP2040 Dual-Core ARM Cortex-M0+ | 3.3V Logic Level                         |
-| 1x       | Si4703 FM Tuner Module               | I2C + 3.5mm Jack                | Includes headphone amp / antenna         |
+| 1x       | Si4703 FM Tuner Module                | I2C + 3.5mm Jack                | Includes headphone amp / antenna         |
 | 1x       | Nokia 5110 Display (PCD8544)          | SPI (84x48 Graphic LCD)         | Backlit graphical LCD                    |
 | 1x       | HW-322 / KY-040 Rotary Encoder Module | Quadrature + Push Button        | Includes pull-up resistors               |
 | 1x       | 3.5mm Headphones                      | Analog Audio                    | **Audio source** (Cable acts as antenna) |
@@ -90,6 +102,11 @@ micropico-fm-receiver/
 ---
 
 ## 5. Wiring Diagram & Pinout Connection
+
+<p align="center">
+  <img src="images/wiring_schematic.png" width="650" alt="Hardware Wiring Schematic"><br>
+  <em>Figure 2: Complete electrical wiring schematic connecting the Raspberry Pi Pico, Si4703 tuner, Nokia 5110 LCD, and KY-040 encoder.</em>
+</p>
 
 ### Hardware Pin Mapping Table
 
@@ -156,15 +173,15 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ### Prerequisites & Dependencies
 
-* **MicroPython Firmware:** v1.20 or later flashed to Raspberry Pi Pico.
-* **Development Environment:** Thonny IDE, VS Code with MicroPico extension, or `rshell`.
+- **MicroPython Firmware:** v1.20 or later flashed to Raspberry Pi Pico.
+- **Development Environment:** Thonny IDE, VS Code with MicroPico extension, or `rshell`.
 
 ### Installation
 
 1. Flash the latest MicroPython `.uf2` image onto the Raspberry Pi Pico.
 2. Clone this repository:
    ```bash
-   git clone https://github.com/Robikhx/MicroPython_FMReceiver_2026
+   git clone [https://github.com/Robikhx/MicroPython_FMReceiver_2026](https://github.com/Robikhx/MicroPython_FMReceiver_2026)
    cd micropico-fm-receiver
    ```
 3. Upload all source files from `src/` to the Pico's root directory:
@@ -190,16 +207,23 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ### Prototype Screenshots
 
-![Breadboard Prototype](design/prototype_photo.jpeg)
-Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder .
+<p align="center">
+   <img src="images/prototype_photo.jpeg" width="250" alt="Breadboard Prototype"><br>
+   <em>Figure 3: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder.</em>
+</p>
 
 ## 10. Deliverables & Presentation Links
 
-* **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder)
-* **Project Poster:** [View Project Poster](docs/poster.pdf).
+- **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder)
+- **Project Poster:** [View Project Poster (PDF)](docs/poster.pdf)
+
+<p align="center">
+  <img src="images/poster.png" width="700" alt="Project Poster"><br>
+  <em>Figure 4: Final project presentation poster summarizing architecture, hardware design, and verification metrics.</em>
+</p>
 
 ---
 
 ## 11. License
 
-* **License:** Open-source under the [MIT License](LICENSE).
+- **License:** Open-source under the [MIT License](LICENSE).
