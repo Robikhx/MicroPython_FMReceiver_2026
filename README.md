@@ -111,26 +111,28 @@ micropico-fm-receiver/
 ### Hardware Pin Mapping Table
 
 
-| Component          | Component Pin | Pico Pin Name   | Pico Physical Pin | Function / Supply Details        |
-| :----------------- | :------------ | :-------------- | :---------------- | :------------------------------- |
-| **Si4703 Tuner**   | VCC           | 3V3_OUT         | Pin 36            | Power (3.3V, max 50mA)           |
-|                    | GND           | GND             | Pin 38            | Common Ground                    |
-|                    | SDIO (SDA)    | GP4 (I2C0 SDA)  | Pin 6             | I2C Data (pull-up configured)    |
-|                    | SCLK (SCL)    | GP5 (I2C0 SCL)  | Pin 7             | I2C Clock                        |
-|                    | RST           | GP6             | Pin 9             | Tuner Reset Pin                  |
-| **Nokia 5110 LCD** | VCC           | 3V3_OUT         | Pin 36            | Power (3.3V)                     |
-|                    | GND           | GND             | Pin 38            | Common Ground                    |
-|                    | CLK           | GP18 (SPI0 SCK) | Pin 24            | SPI Serial Clock                 |
-|                    | DIN (MOSI)    | GP19 (SPI0 TX)  | Pin 25            | SPI Data Input                   |
-|                    | DC            | GP20            | Pin 26            | Data / Command Control           |
-|                    | CE (CS)       | GP17 (SPI0 CSN) | Pin 22            | Chip Enable                      |
-|                    | RST           | GP21            | Pin 27            | Display Reset                    |
-|                    | LIGHT         | 3V3_OUT / GP22  | Pin 36 / 28       | Backlight supply                 |
-| **KY-040 Encoder** | +             | 3V3_OUT         | Pin 36            | Power (3.3V)                     |
-|                    | GND           | GND             | Pin 38            | Common Ground                    |
-|                    | CLK           | GP14            | Pin 19            | Rotary Channel A (Interrupt IRQ) |
-|                    | DT            | GP15            | Pin 20            | Rotary Channel B                 |
-|                    | SW            | GP16            | Pin 21            | Push Button (Interrupt IRQ)      |
+| Component | Component Pin | Pico Pin Name | Pico Physical Pin | Function / Supply Details |
+| :--- | :--- | :--- | :--- | :--- |
+| **Si4703 Tuner** | VCC | 3V3_OUT | Pin 36 | Power (3.3V) |
+| | GND | GND | Pin 38 | Common Ground |
+| | SCLK (SCL) | GP4 | Pin 6 | I2C Clock |
+| | SDIO (SDA) | GP5 | Pin 7 | I2C Data |
+| | RST | GP6 | Pin 9 | Tuner Reset Pin |
+| | SEN | 3V3_OUT | Pin 36 | I2C Interface Selection (HIGH) |
+| **Nokia 5110 LCD** | VCC | 3V3_OUT | Pin 36 | Power (3.3V) |
+| | GND | GND | Pin 38 | Common Ground |
+| | CLK | GP18 (SPI0 SCK) | Pin 24 | SPI Serial Clock |
+| | DIN (MOSI) | GP19 (SPI0 TX) | Pin 25 | SPI Data Input |
+| | DC | GP20 | Pin 26 | Data / Command Control |
+| | CE (CS) | GP17 | Pin 22 | Chip Enable |
+| | RST | GP21 | Pin 27 | Display Reset |
+| | LED | 3V3_OUT | Pin 36 | Backlight Supply |
+| **KY-040 Encoder** | + | 3V3_OUT | Pin 36 | Power (3.3V) |
+| | GND | GND | Pin 38 | Common Ground |
+| | SW | GP14 | Pin 19 | Push Button |
+| | DT | GP15 | Pin 20 | Rotary Channel B |
+| | CLK | GP16 | Pin 21 | Rotary Channel A |
+
 
 ## 6. Software Architecture & Classes
 
