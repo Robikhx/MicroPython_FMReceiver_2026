@@ -3,7 +3,7 @@
 **Digital Electronics 2 Final Project**
 *Raspberry Pi Pico MicroPython Implementation*
 
----
+[![Documentation](https://img.shields.io/badge/docs-Sphynx%20Documentation-blue)](https://robikhx.github.io/MicroPython_FMReceiver_2026/)
 
 ## 1. Problem Statement & Solution Summary
 
@@ -188,7 +188,7 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ## 9. Evidence of Testing
 
-### Prototype Screenshots 
+### Prototype Screenshots
 
 ![Breadboard Prototype](design/prototype_photo.jpeg)
 Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder .
