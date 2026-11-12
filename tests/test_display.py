@@ -8,6 +8,7 @@
 #Counterclockwise | Counter: 1
 #BUTTON PRESSED!
 
+
 from machine import Pin, SPI
 import framebuf
 import time
@@ -43,20 +44,32 @@ fb = framebuf.FrameBuffer(
     buffer, WIDTH, HEIGHT, framebuf.MONO_VLSB
 )
 
+
 def command(value):
     dc.value(0)
     cs.value(0)
     spi.write(bytes([value]))
     cs.value(1)
 
+
 def update():
+    # Rotate framebuffer 180 degrees
+    rotated = bytearray(WIDTH * HEIGHT // 8)
+
+    for x in range(WIDTH):
+        for y in range(HEIGHT):
+            if fb.pixel(x, y):
+                index = ((HEIGHT - 1 - y) // 8) * WIDTH + (WIDTH - 1 - x)
+                rotated[index] |= 1 << ((HEIGHT - 1 - y) % 8)
+
     command(0x40)
     command(0x80)
 
     dc.value(1)
     cs.value(0)
-    spi.write(buffer)
+    spi.write(rotated)
     cs.value(1)
+
 
 def initialize():
     rst.value(0)
@@ -71,9 +84,13 @@ def initialize():
     command(0x20)
     command(0x0C)
 
+    fb.fill(0)
+    update()
+
+
 def test_display():
-    print("Nokia 5110 Display Test")
-    
+    print("Nokia 5110 Display Test - 180 Degree Rotation")
+
     initialize()
     print("Display initialized!")
 
@@ -98,7 +115,7 @@ def test_display():
     update()
     time.sleep(3)
 
-    # Test 4: Rectangle
+    # Test 4: Graphics
     print("Test 4: Graphics")
     fb.fill(0)
     fb.rect(0, 0, 84, 48, 1)
@@ -126,5 +143,6 @@ def test_display():
     update()
 
     print("DISPLAY TEST PASSED!")
+
 
 test_display()
