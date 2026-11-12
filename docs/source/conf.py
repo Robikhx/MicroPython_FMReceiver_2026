@@ -37,3 +37,10 @@ myst_enable_extensions = [
     "html_image",
     "tables",
 ]
+
+autodoc_mock_imports = [
+    "machine",
+    "micropython",
+    "utime",
+    "ujson",
+]
