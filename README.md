@@ -214,6 +214,12 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
    <em>Figure 3: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder.</em>
 </p>
 
+### Individual Components Testing
+
+| **Si4703 Tuner** | **Nokia 5110 LCD** | **KY-040 Encoder** |
+| :---: | :---: | :---: |
+| <video src="https://github.com/user-attachments/assets/2e4a67d3-b4df-41c0-bd82-a52d9042524d" width="280"></video> | <video src="https://github.com/user-attachments/assets/4269456c-361e-4bf9-9ce0-d12fa060c203" width="280"></video> | <video src="https://github.com/user-attachments/assets/a85f7772-ae6c-4a36-b411-d72eab1706bd" width="280"></video> |
+
 ## 10. Deliverables & Presentation Links
 
 - **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder)
