@@ -44,3 +44,27 @@ autodoc_mock_imports = [
     "utime",
     "ujson",
 ]
+
+import os
+import shutil
+
+source_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root = os.path.abspath(os.path.join(source_dir, '../..'))
+
+# Sync root README.md into docs/source/ before Sphinx parses files
+shutil.copyfile(
+    os.path.join(repo_root, 'README.md'),
+    os.path.join(source_dir, 'readme.md')
+)
+
+# Copy raw HTML <img> asset folders into docs/build/html/ after build
+def copy_html_assets(app, exception):
+    if exception is None and app.builder.format == 'html':
+        for asset_dir in ['images', 'design']:
+            src = os.path.join(repo_root, asset_dir)
+            dst = os.path.join(app.outdir, asset_dir)
+            if os.path.exists(src):
+                shutil.copytree(src, dst, dirs_exist_ok=True)
+
+def setup(app):
+    app.connect('build-finished', copy_html_assets)

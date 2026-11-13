@@ -3,7 +3,14 @@
 **Digital Electronics 2 Final Project**
 *Raspberry Pi Pico MicroPython Implementation*
 
----
+<p align="center">
+  <a href="https://robikhx.github.io/MicroPython_FMReceiver_2026/">
+    <img src="https://img.shields.io/badge/docs-Sphinx%20Documentation-red" alt="Documentation">
+  </a>
+  <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Robikhx/MicroPython_FMReceiver_2026" alt="MIT License">
+  </a>
+</p>
 
 ## 1. Problem Statement & Solution Summary
 
@@ -15,24 +22,29 @@ Standard analog FM receivers lack precise digital frequency control, visual feed
 
 This project implements a fully digital FM radio receiver using the **Raspberry Pi Pico (RP2040)** running MicroPython. The system features:
 
-* **Digital Tuning & RDS:** Real-time frequency control via an I2C-controlled **Si4703 FM tuner module**, capable of reading Signal Strength (RSSI) and RDS station text.
-* **User Interface:** A low-power **Nokia 5110 LCD screen** (PCD8544 controller via SPI) displaying tuning frequency, RSSI bar
-* **Input Control:** A **KY-040 Rotary Encoder** utilizing hardware interrupts for smooth frequency stepping and button-activated preset switching.
-* **Isolated Audio:** Audio output is tapped directly from the Si4703 3.5mm jack into headphones or an external powered amplifier.
+- **Digital Tuning & RDS:** Real-time frequency control via an I2C-controlled **Si4703 FM tuner module**, capable of reading Signal Strength (RSSI) and RDS station text.
+- **User Interface:** A low-power **Nokia 5110 LCD screen** (PCD8544 controller via SPI) displaying tuning frequency, RSSI bar
+- **Input Control:** A **KY-040 Rotary Encoder** utilizing hardware interrupts for smooth frequency stepping and button-activated preset switching.
+- **Isolated Audio:** Audio output is tapped directly from the Si4703 3.5mm jack into headphones or an external powered amplifier.
+
+<p align="center">
+  <img src="images/block_diagram.png" width="650" alt="System Block Diagram"><br>
+  <em>Figure 1: High-level hardware and communication bus block diagram of the Micropico FM Receiver.</em>
+</p>
 
 ---
 
 ## 2. Team Members & Contributions
 
-* **Robert Tarnita Gabriel**
-  * **Role:** Lead Software Engineer & Source Control
-  * **Responsibilities:** MicroPython driver integration (`Si4703`, `Nokia5110`, `RotaryEncoder`), interrupt-driven concurrency setup, software architecture, repository structure and management
-* **Daniel Marchis Lucian**
-  * **Role:** Hardware & Physical Assembly Engineer
-  * **Responsibilities:** Component research, schematic design, wiring layout, power and physical breadboard assembly.
-* **Danut Comsa Valentin**
-  * **Role:** Test Engineer & Documentation Lead
-  * **Responsibilities:** System parameter measurements (update rates, RSSI range, response latency), project poster design, verification testing, and video production.
+- **Robert Tarnita Gabriel**
+  - **Role:** Lead Software Engineer & Source Control
+  - **Responsibilities:** MicroPython driver integration (`Si4703`, `Nokia5110`, `RotaryEncoder`), interrupt-driven concurrency setup, software architecture, repository structure and management
+- **Daniel Marchis Lucian**
+  - **Role:** Hardware & Physical Assembly Engineer
+  - **Responsibilities:** Component research, schematic design, wiring layout, power and physical breadboard assembly.
+- **Danut Comsa Valentin**
+  - **Role:** Test Engineer & Documentation Lead
+  - **Responsibilities:** System parameter measurements (update rates, RSSI range, response latency), project poster design, verification testing, and video production.
 
 ---
 
@@ -75,7 +87,7 @@ micropico-fm-receiver/
 | Quantity | Component Description                 | Interface / Specs               | Notes                                    |
 | :------- | :------------------------------------ | :------------------------------ | :--------------------------------------- |
 | 1x       | Raspberry Pi Pico                     | RP2040 Dual-Core ARM Cortex-M0+ | 3.3V Logic Level                         |
-| 1x       | Si4703 FM Tuner Module               | I2C + 3.5mm Jack                | Includes headphone amp / antenna         |
+| 1x       | Si4703 FM Tuner Module                | I2C + 3.5mm Jack                | Includes headphone amp / antenna         |
 | 1x       | Nokia 5110 Display (PCD8544)          | SPI (84x48 Graphic LCD)         | Backlit graphical LCD                    |
 | 1x       | HW-322 / KY-040 Rotary Encoder Module | Quadrature + Push Button        | Includes pull-up resistors               |
 | 1x       | 3.5mm Headphones                      | Analog Audio                    | **Audio source** (Cable acts as antenna) |
@@ -91,29 +103,36 @@ micropico-fm-receiver/
 
 ## 5. Wiring Diagram & Pinout Connection
 
+<p align="center">
+  <img src="images/wiring_schematic.png" width="650" alt="Hardware Wiring Schematic"><br>
+  <em>Figure 2: Complete electrical wiring schematic connecting the Raspberry Pi Pico, Si4703 tuner, Nokia 5110 LCD, and KY-040 encoder.</em>
+</p>
+
 ### Hardware Pin Mapping Table
 
 
-| Component          | Component Pin | Pico Pin Name   | Pico Physical Pin | Function / Supply Details        |
-| :----------------- | :------------ | :-------------- | :---------------- | :------------------------------- |
-| **Si4703 Tuner**   | VCC           | 3V3_OUT         | Pin 36            | Power (3.3V, max 50mA)           |
-|                    | GND           | GND             | Pin 38            | Common Ground                    |
-|                    | SDIO (SDA)    | GP4 (I2C0 SDA)  | Pin 6             | I2C Data (pull-up configured)    |
-|                    | SCLK (SCL)    | GP5 (I2C0 SCL)  | Pin 7             | I2C Clock                        |
-|                    | RST           | GP6             | Pin 9             | Tuner Reset Pin                  |
-| **Nokia 5110 LCD** | VCC           | 3V3_OUT         | Pin 36            | Power (3.3V)                     |
-|                    | GND           | GND             | Pin 38            | Common Ground                    |
-|                    | CLK           | GP18 (SPI0 SCK) | Pin 24            | SPI Serial Clock                 |
-|                    | DIN (MOSI)    | GP19 (SPI0 TX)  | Pin 25            | SPI Data Input                   |
-|                    | DC            | GP20            | Pin 26            | Data / Command Control           |
-|                    | CE (CS)       | GP17 (SPI0 CSN) | Pin 22            | Chip Enable                      |
-|                    | RST           | GP21            | Pin 27            | Display Reset                    |
-|                    | LIGHT         | 3V3_OUT / GP22  | Pin 36 / 28       | Backlight supply                 |
-| **KY-040 Encoder** | +             | 3V3_OUT         | Pin 36            | Power (3.3V)                     |
-|                    | GND           | GND             | Pin 38            | Common Ground                    |
-|                    | CLK           | GP14            | Pin 19            | Rotary Channel A (Interrupt IRQ) |
-|                    | DT            | GP15            | Pin 20            | Rotary Channel B                 |
-|                    | SW            | GP16            | Pin 21            | Push Button (Interrupt IRQ)      |
+| Component | Component Pin | Pico Pin Name | Pico Physical Pin | Function / Supply Details |
+| :--- | :--- | :--- | :--- | :--- |
+| **Si4703 Tuner** | VCC | 3V3_OUT | Pin 36 | Power (3.3V) |
+| | GND | GND | Pin 38 | Common Ground |
+| | SCLK (SCL) | GP4 | Pin 6 | I2C Clock |
+| | SDIO (SDA) | GP5 | Pin 7 | I2C Data |
+| | RST | GP6 | Pin 9 | Tuner Reset Pin |
+| | SEN | 3V3_OUT | Pin 36 | I2C Interface Selection (HIGH) |
+| **Nokia 5110 LCD** | VCC | 3V3_OUT | Pin 36 | Power (3.3V) |
+| | GND | GND | Pin 38 | Common Ground |
+| | CLK | GP18 (SPI0 SCK) | Pin 24 | SPI Serial Clock |
+| | DIN (MOSI) | GP19 (SPI0 TX) | Pin 25 | SPI Data Input |
+| | DC | GP20 | Pin 26 | Data / Command Control |
+| | CE (CS) | GP17 | Pin 22 | Chip Enable |
+| | RST | GP21 | Pin 27 | Display Reset |
+| | LED | 3V3_OUT | Pin 36 | Backlight Supply |
+| **KY-040 Encoder** | + | 3V3_OUT | Pin 36 | Power (3.3V) |
+| | GND | GND | Pin 38 | Common Ground |
+| | SW | GP14 | Pin 19 | Push Button |
+| | DT | GP15 | Pin 20 | Rotary Channel B |
+| | CLK | GP16 | Pin 21 | Rotary Channel A |
+
 
 ## 6. Software Architecture & Classes
 
@@ -156,8 +175,8 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ### Prerequisites & Dependencies
 
-* **MicroPython Firmware:** v1.20 or later flashed to Raspberry Pi Pico.
-* **Development Environment:** Thonny IDE, VS Code with MicroPico extension, or `rshell`.
+- **MicroPython Firmware:** v1.20 or later flashed to Raspberry Pi Pico.
+- **Development Environment:** Thonny IDE, VS Code with MicroPico extension, or `rshell`.
 
 ### Installation
 
@@ -188,18 +207,31 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 
 ## 9. Evidence of Testing
 
-### Prototype Screenshots 
+### Prototype Screenshots
 
-![Breadboard Prototype](design/prototype_photo.jpeg)
-Figure 1: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder .
+<p align="center">
+   <img src="images/prototype_photo.jpeg" width="250" alt="Breadboard Prototype"><br>
+   <em>Figure 3: Fully assembled breadboard prototype with active Nokia 5110 UI display, Si4703 audio output and KY-040 Encoder.</em>
+</p>
+
+### Individual Components Testing
+
+| **Si4703 Tuner** | **Nokia 5110 LCD** | **KY-040 Encoder** |
+| :---: | :---: | :---: |
+| <video src="https://github.com/user-attachments/assets/2e4a67d3-b4df-41c0-bd82-a52d9042524d" width="280"></video> | <video src="https://github.com/user-attachments/assets/4269456c-361e-4bf9-9ce0-d12fa060c203" width="280"></video> | <video src="https://github.com/user-attachments/assets/a85f7772-ae6c-4a36-b411-d72eab1706bd" width="280"></video> |
 
 ## 10. Deliverables & Presentation Links
 
-* **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder)
-* **Project Poster:** [View Project Poster](docs/poster.pdf).
+- **Demonstration Video:** [Watch Project Demo Video on YouTube](https://youtube.com/watch?v=placeholder)
+- **Project Poster:** [View Project Poster (PDF)](docs/poster.pdf)
+
+<p align="center">
+  <img src="images/poster.png" width="700" alt="Project Poster"><br>
+  <em>Figure 4: Final project presentation poster summarizing architecture, hardware design, and verification metrics.</em>
+</p>
 
 ---
 
 ## 11. License
 
-* **License:** Open-source under the [MIT License](LICENSE).
+- **License:** Open-source under the [MIT License](LICENSE).

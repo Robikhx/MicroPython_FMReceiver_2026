@@ -1,13 +1,5 @@
-.. Micropico FM Receiver with Digital Tuning documentation master file, created by
-   sphinx-quickstart on Tue Nov 10 08:20:47 2026.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Micropico FM Receiver with Digital Tuning documentation
-=======================================================
-
-Micropico FM Receiver Documentation
-===================================
+Micropico FM Receiver with Digital Tuning
+=========================================
 
 .. toctree::
    :maxdepth: 3
@@ -20,5 +12,3 @@ Micropico FM Receiver Documentation
    :caption: Code Reference
 
    modules
-
-   
