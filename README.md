@@ -81,8 +81,6 @@ Below is the repository structure required for code execution, documentation gen
 │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/rotary_encoder.py">rotary_encoder.py</a>
 │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/si4703.py">si4703.py</a>
 ├── tests/
-│   ├── test/
-│   │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test/blink.py">blink.py</a>
 │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_display.py">test_display.py</a>
 │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_encode.py">test_encode.py</a>
 │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_tuner.py">test_tuner.py</a>
