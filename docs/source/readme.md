@@ -52,30 +52,41 @@ This project implements a fully digital FM radio receiver using the **Raspberry 
 
 Below is the repository structure required for code execution, documentation generation, and submission assets:
 
-```text
-micropico-fm-receiver/
+<pre>MicroPython_FMReceiver_2026/
 ├── docs/
-│   ├── conf.py
-│   ├── requirements.txt
+│   ├── source/
+│   │   ├── _static/
+│   │   ├── _templates/
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/conf.py">conf.py</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/config.rst">config.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/index.rst">index.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/main.rst">main.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/modules.rst">modules.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/nokia5110.rst">nokia5110.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/readme.md">readme.md</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/rotary_encoder.rst">rotary_encoder.rst</a>
+│   │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/si4703.rst">si4703.rst</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/Makefile">Makefile</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/make.bat">make.bat</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/requirements.txt">requirements.txt</a>
 ├── images/
-│   ├── block_diagram.png
-│   ├── wiring_schematic.png
-│   ├── poster.png
-│   └── prototype_photo.jpeg
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/block_diagram.png">block_diagram.png</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/poster.png">poster.png</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/prototype_photo.jpeg">prototype_photo.jpeg</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/wiring_schematic.png">wiring_schematic.png</a>
 ├── src/
-│   ├── main.py
-│   ├── nokia5110.py
-│   ├── rotary_encoder.py
-│   ├── si4703.py
-│   └── config.py
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/config.py">config.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/main.py">main.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/nokia5110.py">nokia5110.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/rotary_encoder.py">rotary_encoder.py</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/si4703.py">si4703.py</a>
 ├── tests/
-│   ├── test_display.py
-│   ├── test_encoder.py
-│   └── test_tuner.py
-├── README.md
-├── LICENSE
-└── .gitignore
-```
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_display.py">test_display.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_encode.py">test_encode.py</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_tuner.py">test_tuner.py</a>
+├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/.gitignore">.gitignore</a>
+├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/LICENSE">LICENSE</a>
+└── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/README.md">README.md</a></pre>
 
 ---
 

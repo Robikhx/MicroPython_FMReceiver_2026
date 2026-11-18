@@ -52,7 +52,7 @@ This project implements a fully digital FM radio receiver using the **Raspberry 
 
 Below is the repository structure required for code execution, documentation generation, and submission assets:
 
-<pre><code>MicroPython_FMReceiver_2026/
+<pre>MicroPython_FMReceiver_2026/
 ├── docs/
 │   ├── source/
 │   │   ├── _static/
@@ -86,7 +86,7 @@ Below is the repository structure required for code execution, documentation gen
 │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_tuner.py">test_tuner.py</a>
 ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/.gitignore">.gitignore</a>
 ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/LICENSE">LICENSE</a>
-└── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/README.md">README.md</a></code></pre>
+└── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/README.md">README.md</a></pre>
 
 ---
 

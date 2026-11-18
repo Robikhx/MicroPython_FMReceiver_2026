@@ -2,7 +2,7 @@ src
 ===
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 1
 
    config
    main

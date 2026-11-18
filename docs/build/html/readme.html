@@ -88,11 +88,26 @@
 <p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">src</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="config.html">config module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nokia5110.html">nokia5110 module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rotary_encoder.html">rotary_encoder module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="si4703.html">si4703 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nokia5110.html">nokia5110 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nokia5110.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rotary_encoder.html">rotary_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rotary_encoder.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="si4703.html">si4703 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="si4703.html#source-code">Source Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -182,30 +197,41 @@
 <section id="project-structure">
 <h2>3. Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h2>
 <p>Below is the repository structure required for code execution, documentation generation, and submission assets:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>micropico-fm-receiver/
+<pre>MicroPython_FMReceiver_2026/
 ├── docs/
-│   ├── conf.py
-│   ├── requirements.txt
+│   ├── source/
+│   │   ├── _static/
+│   │   ├── _templates/
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/conf.py">conf.py</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/config.rst">config.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/index.rst">index.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/main.rst">main.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/modules.rst">modules.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/nokia5110.rst">nokia5110.rst</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/readme.md">readme.md</a>
+│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/rotary_encoder.rst">rotary_encoder.rst</a>
+│   │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/si4703.rst">si4703.rst</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/Makefile">Makefile</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/make.bat">make.bat</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/requirements.txt">requirements.txt</a>
 ├── images/
-│   ├── block_diagram.png
-│   ├── wiring_schematic.png
-│   ├── poster.png
-│   └── prototype_photo.jpeg
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/block_diagram.png">block_diagram.png</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/poster.png">poster.png</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/prototype_photo.jpeg">prototype_photo.jpeg</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/wiring_schematic.png">wiring_schematic.png</a>
 ├── src/
-│   ├── main.py
-│   ├── nokia5110.py
-│   ├── rotary_encoder.py
-│   ├── si4703.py
-│   └── config.py
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/config.py">config.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/main.py">main.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/nokia5110.py">nokia5110.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/rotary_encoder.py">rotary_encoder.py</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/si4703.py">si4703.py</a>
 ├── tests/
-│   ├── test_display.py
-│   ├── test_encoder.py
-│   └── test_tuner.py
-├── README.md
-├── LICENSE
-└── .gitignore
-</pre></div>
-</div>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_display.py">test_display.py</a>
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_encode.py">test_encode.py</a>
+│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_tuner.py">test_tuner.py</a>
+├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/.gitignore">.gitignore</a>
+├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/LICENSE">LICENSE</a>
+└── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/README.md">README.md</a></pre>
 </section>
 <hr class="docutils" />
 <section id="hardware-inventory-assumptions">

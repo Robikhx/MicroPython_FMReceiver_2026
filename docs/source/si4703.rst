@@ -5,3 +5,10 @@ si4703 module
    :members:
    :show-inheritance:
    :undoc-members:
+
+Source Code
+-----------
+
+.. literalinclude:: ../../src/si4703.py
+   :language: python
+   :linenos:
