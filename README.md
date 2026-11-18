@@ -52,30 +52,41 @@ This project implements a fully digital FM radio receiver using the **Raspberry 
 
 Below is the repository structure required for code execution, documentation generation, and submission assets:
 
-```text
-micropico-fm-receiver/
+<pre><code>MicroPython_FMReceiver_2026/
 ├── docs/
-│   ├── conf.py
-│   ├── requirements.txt
+│   ├── source/
+│   │   ├── _static/
+│   │   ├── _templates/
+│   │   ├── <a href="docs/source/conf.py">conf.py</a>
+│   │   ├── <a href="docs/source/config.rst">config.rst</a>
+│   │   ├── <a href="docs/source/index.rst">index.rst</a>
+│   │   ├── <a href="docs/source/main.rst">main.rst</a>
+│   │   ├── <a href="docs/source/modules.rst">modules.rst</a>
+│   │   ├── <a href="docs/source/nokia5110.rst">nokia5110.rst</a>
+│   │   ├── <a href="docs/source/readme.md">readme.md</a>
+│   │   ├── <a href="docs/source/rotary_encoder.rst">rotary_encoder.rst</a>
+│   │   └── <a href="docs/source/si4703.rst">si4703.rst</a>
+│   ├── <a href="docs/Makefile">Makefile</a>
+│   ├── <a href="docs/make.bat">make.bat</a>
+│   └── <a href="docs/requirements.txt">requirements.txt</a>
 ├── images/
-│   ├── block_diagram.png
-│   ├── wiring_schematic.png
-│   ├── poster.png
-│   └── prototype_photo.jpeg
+│   ├── <a href="images/block_diagram.png">block_diagram.png</a>
+│   ├── <a href="images/poster.png">poster.png</a>
+│   ├── <a href="images/prototype_photo.jpeg">prototype_photo.jpeg</a>
+│   └── <a href="images/wiring_schematic.png">wiring_schematic.png</a>
 ├── src/
-│   ├── main.py
-│   ├── nokia5110.py
-│   ├── rotary_encoder.py
-│   ├── si4703.py
-│   └── config.py
+│   ├── <a href="src/config.py">config.py</a>
+│   ├── <a href="src/main.py">main.py</a>
+│   ├── <a href="src/nokia5110.py">nokia5110.py</a>
+│   ├── <a href="src/rotary_encoder.py">rotary_encoder.py</a>
+│   └── <a href="src/si4703.py">si4703.py</a>
 ├── tests/
-│   ├── test_display.py
-│   ├── test_encoder.py
-│   └── test_tuner.py
-├── README.md
-├── LICENSE
-└── .gitignore
-```
+│   ├── <a href="tests/test_display.py">test_display.py</a>
+│   ├── <a href="tests/test_encode.py">test_encode.py</a>
+│   └── <a href="tests/test_tuner.py">test_tuner.py</a>
+├── <a href=".gitignore">.gitignore</a>
+├── <a href="LICENSE">LICENSE</a>
+└── <a href="README.md">README.md</a></code></pre>
 
 ---
 
