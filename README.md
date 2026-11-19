@@ -50,44 +50,15 @@ This project implements a fully digital FM radio receiver using the **Raspberry 
 
 ## 3. Project Structure
 
-Below is the repository structure required for code execution, documentation generation, and submission assets:
+Below is the repository directory layout for code execution, documentation generation, and submission assets:
 
-<pre>MicroPython_FMReceiver_2026/
-├── docs/
-│   ├── source/
-│   │   ├── _static/
-│   │   ├── _templates/
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/conf.py">conf.py</a>
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/config.rst">config.rst</a>
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/index.rst">index.rst</a>
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/main.rst">main.rst</a>
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/modules.rst">modules.rst</a>
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/nokia5110.rst">nokia5110.rst</a>
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/readme.md">readme.md</a>
-│   │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/rotary_encoder.rst">rotary_encoder.rst</a>
-│   │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/source/si4703.rst">si4703.rst</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/Makefile">Makefile</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/make.bat">make.bat</a>
-│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/docs/requirements.txt">requirements.txt</a>
-├── images/
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/block_diagram.png">block_diagram.png</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/poster.png">poster.png</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/prototype_photo.jpeg">prototype_photo.jpeg</a>
-│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/wiring_schematic.png">wiring_schematic.png</a>
-├── src/
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/presets.py">presets.py</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/config.py">config.py</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/main.py">main.py</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/nokia5110.py">nokia5110.py</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/rotary_encoder.py">rotary_encoder.py</a>
-│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/si4703.py">si4703.py</a>
-├── tests/
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_display.py">test_display.py</a>
-│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_encode.py">test_encode.py</a>
-│   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/tests/test_tuner.py">test_tuner.py</a>
-├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/.gitignore">.gitignore</a>
-├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/LICENSE">LICENSE</a>
-└── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/README.md">README.md</a></pre>
+```text
+MicroPython_FMReceiver_2026/
+├── docs/      # Sphinx documentation source files (.rst, conf.py) and build scripts
+├── images/    # Hardware block diagrams, wiring schematics, prototype photos, and project poster
+├── src/       # MicroPython hardware drivers, pin/system configuration, and main application loop
+└── tests/     # Standalone hardware verification and unit test scripts for tuner, display, and encoder
+```
 
 ---
 
@@ -141,26 +112,28 @@ Below is the repository structure required for code execution, documentation gen
 | | LED | 3V3_OUT | Pin 36 | Backlight Supply |
 | **KY-040 Encoder** | + | 3V3_OUT | Pin 36 | Power (3.3V) |
 | | GND | GND | Pin 38 | Common Ground |
-| | SW | GP12 | Pin 19 | Push Button |
-| | DT | GP11 | Pin 20 | Rotary Channel B |
-| | CLK | GP10 | Pin 21 | Rotary Channel A |
+| | SW | GP14 | Pin 19 | Push Button |
+| | DT | GP15 | Pin 20 | Rotary Channel B |
+| | CLK | GP16 | Pin 21 | Rotary Channel A |
 
 
 ## 6. Software Architecture & Classes
 
-The codebase is organized into modular classes to enforce encapsulation and code reusability:
+The codebase is organized into modular classes and configuration modules to enforce encapsulation and code reusability:
 
-1. **`Si4703` (`src/si4703.py`):**
-   * Encapsulates I2C communications with the Silicon Labs Si4703 chip.
-   * Handles initialization sequence, hardware reset, channel frequency calculation ($MHz \leftrightarrow \text{Channel ID}$), volume adjustment, RSSI register polling, and RDS block decoding.
-2. **`Nokia5110` (`src/nokia5110.py`):**
-   * Encapsulates SPI communication with the PCD8544 display controller.
-   * Manages an 84x48 frame buffer, custom typography rendering, RSSI signal bar drawing routines, and partial screen updates.
-3. **`RotaryEncoder` (`src/rotary_encoder.py`):**
-   * Provides non-blocking quadrature decoding via MicroPython `Pin.IRQ_RISING` / `Pin.IRQ_FALLING` interrupts.
-   * Implements software debouncing for reliable step detection and switch press handling.
-4. **`main.py` (`src/main.py`):**
-   * Instantiates hardware classes, manages state (current frequency, volume, station presets), and runs the asynchronous event execution loop.
+1. **`Si4703` ([`src/si4703.py`](https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/si4703.py)):**
+   - Encapsulates I2C communications with the Silicon Labs Si4703 chip.
+   - Handles initialization sequence, hardware reset, channel frequency calculation ($MHz \leftrightarrow \text{Channel ID}$), volume adjustment, RSSI register polling, and RDS block decoding.
+2. **`Nokia5110` ([`src/nokia5110.py`](https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/nokia5110.py)):**
+   - Encapsulates SPI communication with the PCD8544 display controller.
+   - Manages an 84x48 frame buffer, custom typography rendering, RSSI signal bar drawing routines, and partial screen updates.
+3. **`RotaryEncoder` ([`src/rotary_encoder.py`](https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/rotary_encoder.py)):**
+   - Provides non-blocking quadrature decoding via MicroPython `Pin.IRQ_RISING` / `Pin.IRQ_FALLING` interrupts.
+   - Implements software debouncing for reliable step detection and switch press handling.
+4. **`config.py` ([`src/config.py`](https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/config.py)):**
+   - Centralizes GPIO pin mappings, I2C/SPI bus parameters, tuning bounds, and default station preset definitions.
+5. **`main.py` ([`src/main.py`](https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/main.py)):**
+   - Instantiates hardware classes, manages state (current frequency, volume, station presets), and runs the asynchronous event execution loop.
 
 ### Component Class Justification
 
@@ -212,7 +185,7 @@ To maintain smooth audio processing, responsive UI updates, and zero missed enco
 1. **Power On:** Connect 3.5mm headphones or an aux cable connected to an amplifier into the Si4703 3.5mm jack. Power the Pico via USB.
 2. **Frequency Tuning:** Rotate the encoder knob clockwise to tune up (+0.1 MHz) or counter-clockwise to tune down (-0.1 MHz).
 3. **Preset Switching:** Short-press the rotary encoder shaft button to cycle through saved station presets.
-4. **Save Preset:** Press and hold the rotary encoder shaft button for > 2 seconds on any active frequency to save it to the current preset slot.
+4. **Save Preset:** Press and hold the rotary encoder shaft button for greater than 2 seconds on any active frequency to save it to the current preset slot.
 5. **Display Metrics:** Observe real-time frequency ($MHz$), signal strength ($dBuV$), and RDS station text on the LCD.
 
 ---
