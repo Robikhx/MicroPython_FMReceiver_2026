@@ -1,4 +1,26 @@
-"""Simple Nokia 5110 (PCD8544) display class."""
+"""
+============================================================
+ Project: MicroPython FM Receiver 2026
+ File: nokia5110.py
+
+ Description:
+ Custom driver for the Nokia 5110 LCD (PCD8544).
+ Handles SPI communication, display initialization,
+ framebuffer management, text and graphics rendering.
+
+ Author: MicroPython FM Receiver 2026 Team
+
+ Implementation:
+ Original implementation developed for this project.
+
+ Technical References:
+ - Philips PCD8544 LCD Controller Datasheet
+ - MicroPython FrameBuffer Documentation
+ - McAuser MicroPython PCD8544:
+   https://github.com/mcauser/micropython-pcd8544
+
+============================================================
+"""
 
 from machine import Pin, SPI
 import framebuf

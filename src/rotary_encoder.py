@@ -1,7 +1,26 @@
-"""Polling rotary encoder with debounced single/double/long button actions.
+"""
+============================================================
+ Project: MicroPython FM Receiver 2026
+ File: rotary_encoder.py
 
-Call update() frequently from the main loop. No interrupts are needed, which
-keeps the code easy to understand and avoids doing work inside an IRQ.
+ Description:
+ Custom KY-040 rotary encoder driver.
+ Handles rotation direction, button presses,
+ debouncing, single clicks, double clicks and long presses.
+
+ Author: MicroPython FM Receiver 2026 Team
+
+ Implementation:
+ Original implementation developed for this project.
+ Uses quadrature decoding and software debouncing.
+
+ Technical References:
+ - KY-040 Rotary Encoder Datasheet
+ - Mike Teachman MicroPython Rotary:
+   https://github.com/miketeachman/micropython-rotary
+ - MicroPython GPIO Documentation
+
+============================================================
 """
 
 from machine import Pin

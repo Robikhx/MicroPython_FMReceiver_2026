@@ -1,8 +1,20 @@
-# ==============================
-# PROJECT CONFIGURATION
-# Change hardware pins and radio settings here.
-# Frequencies are stored in tenths of MHz: 995 = 99.5 MHz.
-# ==============================
+"""
+============================================================
+ Project: MicroPython FM Receiver 2026
+ File: config.py
+
+ Description:
+ Central configuration file.
+ Contains GPIO assignments, SPI/I2C parameters,
+ radio frequencies, volume settings and encoder options.
+
+ Author: MicroPython FM Receiver 2026 Team
+
+ Implementation:
+ Original project configuration.
+
+============================================================
+"""
 
 # Si4703 tuner (I2C0)
 I2C_ID = 0

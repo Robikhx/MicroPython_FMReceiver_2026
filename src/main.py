@@ -1,4 +1,20 @@
-"""Main application for the MicroPython FM receiver."""
+"""
+============================================================
+ Project: MicroPython FM Receiver 2026
+ File: main.py
+
+ Description:
+ Main application of the FM Receiver.
+ Initializes hardware components and coordinates
+ the tuner, display, rotary encoder and presets.
+
+ Author: MicroPython FM Receiver 2026 Team
+
+ Implementation:
+ Original application logic and system integration.
+
+============================================================
+"""
 
 import time
 import config

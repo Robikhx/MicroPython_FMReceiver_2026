@@ -1,4 +1,21 @@
-"""Small JSON file helper for persistent radio presets."""
+"""
+============================================================
+ Project: MicroPython FM Receiver 2026
+ File: presets.py
+
+ Description:
+ Manages FM radio station presets.
+ Supports saving, loading, updating and selecting
+ stored frequencies.
+
+ Author: MicroPython FM Receiver 2026 Team
+
+ Implementation:
+ Original implementation developed for this project.
+ Uses MicroPython file handling for preset storage.
+
+============================================================
+"""
 
 import json
 

@@ -1,4 +1,26 @@
-"""Simple Si4703 FM tuner driver for Raspberry Pi Pico / MicroPython."""
+"""
+============================================================
+ Project: MicroPython FM Receiver 2026
+ File: si4703.py
+
+ Description:
+ Custom MicroPython driver for the Si4703 FM tuner.
+ Handles I2C communication, initialization, frequency
+ tuning, volume control, mute and RSSI measurements.
+
+ Author: MicroPython FM Receiver 2026 Team
+
+ Implementation:
+ Original implementation developed for this project.
+
+ Technical References:
+ - Silicon Labs Si4703 Datasheet
+ - Silicon Labs AN230 Programming Guide
+ - SparkFun Si4703 Arduino Library:
+   https://github.com/sparkfun/SparkFun_Si4703_Arduino_Library
+
+============================================================
+"""
 
 from machine import Pin, I2C
 import time
