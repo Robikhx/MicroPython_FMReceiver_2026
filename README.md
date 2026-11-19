@@ -98,8 +98,8 @@ MicroPython_FMReceiver_2026/
 | :--- | :--- | :--- | :--- | :--- |
 | **Si4703 Tuner** | VCC | 3V3_OUT | Pin 36 | Power (3.3V) |
 | | GND | GND | Pin 38 | Common Ground |
-| | SCLK (SCL) | GP4 | Pin 6 | I2C Clock |
-| | SDIO (SDA) | GP5 | Pin 7 | I2C Data |
+| | SCLK (SCL) | GP5 | Pin 6 | I2C Clock |
+| | SDIO (SDA) | GP4 | Pin 7 | I2C Data |
 | | RST | GP6 | Pin 9 | Tuner Reset Pin |
 | | SEN | 3V3_OUT | Pin 36 | I2C Interface Selection (HIGH) |
 | **Nokia 5110 LCD** | VCC | 3V3_OUT | Pin 36 | Power (3.3V) |
@@ -112,9 +112,9 @@ MicroPython_FMReceiver_2026/
 | | LED | 3V3_OUT | Pin 36 | Backlight Supply |
 | **KY-040 Encoder** | + | 3V3_OUT | Pin 36 | Power (3.3V) |
 | | GND | GND | Pin 38 | Common Ground |
-| | SW | GP14 | Pin 19 | Push Button |
-| | DT | GP15 | Pin 20 | Rotary Channel B |
-| | CLK | GP16 | Pin 21 | Rotary Channel A |
+| | SW | GP12 | Pin 19 | Push Button |
+| | DT | GP11 | Pin 20 | Rotary Channel B |
+| | CLK | GP10 | Pin 21 | Rotary Channel A |
 
 
 ## 6. Software Architecture & Classes
