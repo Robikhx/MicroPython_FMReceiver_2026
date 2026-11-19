@@ -75,6 +75,7 @@ Below is the repository structure required for code execution, documentation gen
 │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/prototype_photo.jpeg">prototype_photo.jpeg</a>
 │   └── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/images/wiring_schematic.png">wiring_schematic.png</a>
 ├── src/
+│   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/presets.py">presets.py</a>
 │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/config.py">config.py</a>
 │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/main.py">main.py</a>
 │   ├── <a href="https://github.com/Robikhx/MicroPython_FMReceiver_2026/blob/main/src/nokia5110.py">nokia5110.py</a>
@@ -140,9 +141,9 @@ Below is the repository structure required for code execution, documentation gen
 | | LED | 3V3_OUT | Pin 36 | Backlight Supply |
 | **KY-040 Encoder** | + | 3V3_OUT | Pin 36 | Power (3.3V) |
 | | GND | GND | Pin 38 | Common Ground |
-| | SW | GP14 | Pin 19 | Push Button |
-| | DT | GP15 | Pin 20 | Rotary Channel B |
-| | CLK | GP16 | Pin 21 | Rotary Channel A |
+| | SW | GP12 | Pin 19 | Push Button |
+| | DT | GP11 | Pin 20 | Rotary Channel B |
+| | CLK | GP10 | Pin 21 | Rotary Channel A |
 
 
 ## 6. Software Architecture & Classes
